@@ -1,0 +1,11 @@
+C:\Users\Cifka\source\repos\RaZem_Photo\bin\Debug\RaZem_Photo.exe.config
+C:\Users\Cifka\source\repos\RaZem_Photo\bin\Debug\RaZem_Photo.exe
+C:\Users\Cifka\source\repos\RaZem_Photo\bin\Debug\RaZem_Photo.pdb
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.csproj.AssemblyReference.cache
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.Form1.resources
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.Properties.Resources.resources
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.csproj.GenerateResource.cache
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.csproj.CoreCompileInputs.cache
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.exe
+C:\Users\Cifka\source\repos\RaZem_Photo\obj\Debug\RaZem_Photo.pdb
