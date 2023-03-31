@@ -22,53 +22,6 @@ namespace RaZem_Photo
             SD_Card_RB.Checked = true;
             Counter_INPOUT_LB.Text = 0.ToString();
             COUNTER_OUTPUT_LB.Text = 0.ToString();
-            /*if (!Directory.Exists(Constanty.SD_CARD_PATH))
-            {
-                Directory.CreateDirectory(Constanty.SD_CARD_PATH);
-                SD_CARD_TX.Text = Constanty.SD_CARD_PATH;
-            } else
-            {
-               SD_CARD_TX.Text = Constanty.SD_CARD_PATH;
-            }
-            if(!Directory.Exists(Constanty.CAMERA_PATH))
-            {
-                Directory.CreateDirectory(Constanty.CAMERA_PATH);
-                CAMERA_TX.Text = Constanty.CAMERA_PATH;
-            } else
-            {
-                CAMERA_TX.Text = Constanty.CAMERA_PATH;
-            }*/
-            if(!Directory.Exists(Constanty.DESTINATION_PATH))
-            {
-                Directory.CreateDirectory(Constanty.DESTINATION_PATH);
-                DESTINATION_TX.Text = Constanty.DESTINATION_PATH;
-                string[] directories = Directory.GetDirectories(DESTINATION_TX.Text);
-                if (directories.Length > 0)
-                {
-                    foreach (string directory in directories)
-                    {
-                        OUTPUT_LX.Items.Add(Path.GetFileName(directory));
-                    }
-
-                }
-
-            } else
-            {
-                DESTINATION_TX.Text = Constanty.DESTINATION_PATH;
-                string[] directories = Directory.GetDirectories(DESTINATION_TX.Text);
-                if (directories.Length > 0)
-                {
-                    foreach (string directory in directories)
-                    {
-                        OUTPUT_LX.Items.Add(Path.GetFileName(directory));
-                    }
-
-                }
-            }
-            /*if (!Directory.Exists(Constanty.ZALOHA))
-            {
-                Directory.CreateDirectory(Constanty.ZALOHA);
-            }*/
 
             timer1.Start();
 
@@ -203,14 +156,19 @@ namespace RaZem_Photo
             }
             COUNTER_OUTPUT_LB.Text = "Kopiruji";
             
+            int progress = 0;
+            int step = 100 / Files.Count();
             foreach (string s in Files)
             {
                 // Use static Path methods to extract only the file name from the path.
                 string fileName = Path.GetFileName(s);
                 string destFile = Path.Combine(DESTINATION_TX.Text + "\\" + OUTPUT_LX.SelectedItem.ToString(), fileName);
                 File.Copy(s, destFile, true);
+                FileInfo file = new FileInfo(s);
+                file.Delete();
                 counter_files++;
-                COUNTER_OUTPUT_LB.Text = counter_files.ToString();
+                progress = progress + step;
+                progressBar1.Value = progress;
             }
 
             if(Convert.ToInt32(Counter_INPOUT_LB.Text) == counter_files)
@@ -218,17 +176,8 @@ namespace RaZem_Photo
                 COUNTER_OUTPUT_LB.Text = "OK";
             }
 
-            /*string[] retrive = Files;
             back_files = Files;
 
-            foreach(string s in retrive)
-            {
-                string fileName = Path.GetFileName(s);
-                string destFile = Path.Combine(Constanty.ZALOHA, fileName);
-                File.Copy(s, destFile, true);
-                FileInfo file = new FileInfo(s);
-                file.Delete();
-            }*/
 
             Files = null;
 
@@ -285,7 +234,7 @@ namespace RaZem_Photo
             COUNTER_OUTPUT_LB.Text = 0.ToString();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             if(Load_BTN.Enabled == true)
             {

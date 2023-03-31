@@ -56,8 +56,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.DESTINATION_TX = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.INPUT.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // INPUT
@@ -221,6 +224,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.UP_CB);
             this.groupBox1.Controls.Add(this.COUNTER_OUTPUT_LB);
             this.groupBox1.Controls.Add(this.label5);
@@ -252,7 +256,7 @@
             // 
             this.COUNTER_OUTPUT_LB.AutoSize = true;
             this.COUNTER_OUTPUT_LB.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.COUNTER_OUTPUT_LB.Location = new System.Drawing.Point(230, 646);
+            this.COUNTER_OUTPUT_LB.Location = new System.Drawing.Point(298, 641);
             this.COUNTER_OUTPUT_LB.Name = "COUNTER_OUTPUT_LB";
             this.COUNTER_OUTPUT_LB.Size = new System.Drawing.Size(0, 24);
             this.COUNTER_OUTPUT_LB.TabIndex = 7;
@@ -261,7 +265,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(151, 646);
+            this.label5.Location = new System.Drawing.Point(8, 641);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 24);
             this.label5.TabIndex = 6;
@@ -329,7 +333,18 @@
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(87, 641);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(176, 23);
+            this.progressBar1.TabIndex = 15;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -345,6 +360,7 @@
             this.INPUT.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,6 +393,8 @@
         private System.Windows.Forms.CheckBox TIMES_CB;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox UP_CB;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
