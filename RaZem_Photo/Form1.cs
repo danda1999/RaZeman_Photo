@@ -196,6 +196,8 @@ namespace RaZem_Photo
                 OUTPUT_LX.SetSelected(index + 1, true);
             }
 
+            button1_Click(sender, e);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -244,6 +246,25 @@ namespace RaZem_Photo
                 }
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int index = OUTPUT_LX.SelectedIndex;
+
+            if (DESTINATION_TX.Text.Length == 0)
+            {
+                return;
+            }
+            OUTPUT_LX.Items.Clear();
+            string[] directories = Directory.GetDirectories(DESTINATION_TX.Text);
+
+            foreach (string directory in directories)
+            {
+                OUTPUT_LX.Items.Add(Path.GetFileName(directory));
+            }
+
+            OUTPUT_LX.SetSelected(index, true);
         }
     }
 }

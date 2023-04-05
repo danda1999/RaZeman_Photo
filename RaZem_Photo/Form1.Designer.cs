@@ -46,6 +46,7 @@
             this.SD_Card_RB = new System.Windows.Forms.RadioButton();
             this.SD_CARD_SEARCH_BT = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.UP_CB = new System.Windows.Forms.CheckBox();
             this.COUNTER_OUTPUT_LB = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,8 +57,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.DESTINATION_TX = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.INPUT.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -224,6 +225,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.UP_CB);
             this.groupBox1.Controls.Add(this.COUNTER_OUTPUT_LB);
@@ -240,6 +242,13 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OUTPUT";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(87, 641);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(176, 23);
+            this.progressBar1.TabIndex = 15;
             // 
             // UP_CB
             // 
@@ -335,16 +344,20 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(87, 641);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(176, 23);
-            this.progressBar1.TabIndex = 15;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.button1.Location = new System.Drawing.Point(345, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -395,6 +408,7 @@
         private System.Windows.Forms.CheckBox UP_CB;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
