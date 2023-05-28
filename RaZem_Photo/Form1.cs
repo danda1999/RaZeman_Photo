@@ -190,13 +190,23 @@ namespace RaZem_Photo
             }
 
             Counter_INPOUT_LB.Text = 0.ToString();
-            if(UP_CB.Checked == true)
-            {
-                int index = OUTPUT_LX.SelectedIndex;
-                OUTPUT_LX.SetSelected(index + 1, true);
-            }
 
             button1_Click(sender, e);
+
+            if (UP_CB.Checked == true)
+            {
+                int index = OUTPUT_LX.SelectedIndex;
+
+                if(index == OUTPUT_LX.Items.Count - 1)
+                {
+                    index = 0;
+                    OUTPUT_LX.SetSelected(index, true);
+                } else
+                {
+                    OUTPUT_LX.SetSelected(index + 1, true);
+                }
+                
+            }
 
         }
 
@@ -205,7 +215,16 @@ namespace RaZem_Photo
             if (UP_CB.Checked == true)
             {
                 int index = OUTPUT_LX.SelectedIndex;
-                OUTPUT_LX.SetSelected(index - 1, true);
+                if(index == 0)
+                {
+                    index = OUTPUT_LX.Items.Count - 1;
+                    OUTPUT_LX.SetSelected(index, true);
+
+                } else
+                {
+                    OUTPUT_LX.SetSelected(index - 1, true);
+                }
+                
             }
             int counter_files = 0;
             Counter_INPOUT_LB.Text = "Vracím";
@@ -251,6 +270,11 @@ namespace RaZem_Photo
         private void button1_Click(object sender, EventArgs e)
         {
             int index = OUTPUT_LX.SelectedIndex;
+
+            if(index == -1)
+            {
+                return;
+            }
 
             if (DESTINATION_TX.Text.Length == 0)
             {
