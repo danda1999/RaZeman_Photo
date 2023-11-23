@@ -80,6 +80,10 @@ namespace RaZem_Photo
                     Counter_INPOUT_LB.Text = counter_files.ToString();
                     button2.Enabled = true;
                     button3.Enabled = true;
+
+                    System.Threading.Thread.Sleep(30000);
+
+                    button2_Click(sender, e);
                 } catch{
                     button2.Enabled = false;
                     button3.Enabled = false;
