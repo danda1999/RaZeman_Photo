@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.INPUT = new System.Windows.Forms.GroupBox();
+            this.COPY_CB = new System.Windows.Forms.CheckBox();
             this.TIMES_CB = new System.Windows.Forms.CheckBox();
             this.Counter_INPOUT_LB = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.SD_Card_RB = new System.Windows.Forms.RadioButton();
             this.SD_CARD_SEARCH_BT = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.UP_CB = new System.Windows.Forms.CheckBox();
             this.COUNTER_OUTPUT_LB = new System.Windows.Forms.Label();
@@ -58,7 +60,6 @@
             this.DESTINATION_TX = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.INPUT.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -67,6 +68,7 @@
             // INPUT
             // 
             this.INPUT.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.INPUT.Controls.Add(this.COPY_CB);
             this.INPUT.Controls.Add(this.TIMES_CB);
             this.INPUT.Controls.Add(this.Counter_INPOUT_LB);
             this.INPUT.Controls.Add(this.label3);
@@ -88,10 +90,20 @@
             this.INPUT.TabStop = false;
             this.INPUT.Text = "INPUT";
             // 
+            // COPY_CB
+            // 
+            this.COPY_CB.AutoSize = true;
+            this.COPY_CB.Location = new System.Drawing.Point(525, 703);
+            this.COPY_CB.Name = "COPY_CB";
+            this.COPY_CB.Size = new System.Drawing.Size(130, 20);
+            this.COPY_CB.TabIndex = 14;
+            this.COPY_CB.Text = "Copy automation";
+            this.COPY_CB.UseVisualStyleBackColor = true;
+            // 
             // TIMES_CB
             // 
             this.TIMES_CB.AutoSize = true;
-            this.TIMES_CB.Location = new System.Drawing.Point(529, 686);
+            this.TIMES_CB.Location = new System.Drawing.Point(525, 676);
             this.TIMES_CB.Name = "TIMES_CB";
             this.TIMES_CB.Size = new System.Drawing.Size(87, 20);
             this.TIMES_CB.TabIndex = 13;
@@ -243,6 +255,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OUTPUT";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F);
+            this.button1.Location = new System.Drawing.Point(345, 75);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 41);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(87, 641);
@@ -348,17 +371,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F);
-            this.button1.Location = new System.Drawing.Point(345, 75);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 41);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,6 +421,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox COPY_CB;
     }
 }
 
